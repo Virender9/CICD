@@ -1,0 +1,16 @@
+name: Basic CI Pipeline
+
+# Trigger this on evry push to main branch
+
+on: [ push ]
+
+jobs:
+    builds:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build Stage
+              run: echo "Build stage done"
+            - name: Test stage
+              run: echo "Test stage done"
+            - name: Deploy stage
+              run: echo "Deploy stage done"
