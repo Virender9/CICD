@@ -2,7 +2,10 @@ name: Basic CI Pipeline
 
 # Trigger this on evry push to main branch
 
-on: [ push ]
+on: 
+    push:
+        branches:
+            - master
 
 jobs:
     builds:

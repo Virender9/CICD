@@ -1,18 +1,23 @@
-name: Node JS CI Pipeline
+name: Sample node build
 
-on: [ push ]
+on:
+    push:
+        branches:
+            - main
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: checkout Repository
-            - uses: actions/checkout@v5
-            - name: Setup Node JS
-            - uses: actions/setup-node@v5
+            - name: Checkout code
+              uses: actions/checkout@v5
+            - name: Steup Node application
+              uses: actions/setup-node@v5
               with:
-                node-version: 20
-            - name: Install Dependencies
+                node-version: 18
+            # Step 3
+            - name: Install Dependencties
               run: npm install
-            - name: Build Project
-              run: npm run build --if-presents
+            # Step 4
+            - name: Run Tests
+              run: npm test
