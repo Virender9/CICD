@@ -1,17 +1,14 @@
-name: Sample node build
-
-on:
-    push:
-        branches:
-            - main
-
+name: Nodejs CI
+on : [push]
 jobs:
     build:
         runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
+        steps: 
+            # Step 1
+            - name: Checkout repository
               uses: actions/checkout@v5
-            - name: Steup Node application
+            # Step 2
+            - name: Set up Node JS
               uses: actions/setup-node@v5
               with:
                 node-version: 18
